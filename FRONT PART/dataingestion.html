@@ -55,11 +55,14 @@
           <p class="heading">Reset Database</p>
           <button type="button" id="dropbutton" class="drop-button">Drop Database</button>
         </div>
+        <div>
+          <button type="button" id="topButton" class="top-button">Back to the top</button>
+        </div>
     </div>
   </div>
   <script src="script.js"></script>
   <script>
-    document.getElementById('topbutton').addEventListener('click', function() {
+    document.getElementById('topButton').addEventListener('click', function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>

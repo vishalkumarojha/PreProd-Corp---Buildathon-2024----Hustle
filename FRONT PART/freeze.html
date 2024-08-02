@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="datatransformation.css">
+  </head>
+  <body>
+    <div>
+      <nav class="navbar" id="navbar">
+        <ul>
+            <li><a href="dataingestion.html" class="dataingestion">Data Ingestion</a></li>
+            <li><a href="datatransformation.html">Data Transformation</a></li>
+            <li><a href="autotrain.html">Auto Train ML models</a></li>
+            <li><a href="freeze.html">Freeze the learnings</a></li>
+        </ul>
+      </nav>
+      <div class="container1">
+        <p>Linear regression</p>
+        <div><p>Enter model path</p></div>
+        <div><form>
+          <input type="text" id="simpleInput" name="simpleInput">
+      </form></div>
+        <div><button id="actionButton">Save Linear Regression Model</button>
+          <div id="message" style="display: none;">Learnings frozen successfully</div>
+      
+          </div>
+      </div>
+      <div class="container2">
+        <p>Decision tree</p>
+        <div><p>Enter model path</p></div>
+        <div><form>
+          <input type="text" id="simpleInput" name="simpleInput">
+      </form></div>
+      <div><button id="actionButton">Save Decision Tree Model</button>
+        <div id="message" style="display: none;">Learnings frozen successfully</div>
+    
+        </div>
+      </div>
+      <div class="container3">
+        <p>ADA Boost</p>
+        <div><p>Enter model path</p></div>
+        <div><form>
+          <input type="text" id="simpleInput" name="simpleInput">
+      </form></div>
+      <div><button id="actionButton">Save ADA Boost Model</button>
+        <div id="message" style="display: none;">Learnings frozen successfully</div>
+    
+        </div>
+      </div>
+      <div>
+        <button type="button" id="topButton" class="top-button">Back to the top</button>
+      </div>
+    </div>
+    <script>
+      document.getElementById("actionButton").addEventListener("click", function() {
+          document.getElementById("message").style.display = "block";
+      });
+      document.getElementById('topButton').addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+  </body>
+</html>

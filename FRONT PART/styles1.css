@@ -9,7 +9,11 @@ body, html {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  background-color: black;
+  background-image: url('media/landingbackground.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .main {
@@ -94,7 +98,7 @@ header {
 }
 
 .button:hover {
-  background-color: #5fadd0;
+  box-shadow: rgba(20, 7, 24, 0.312);
 }
 .bgimg{
   margin-right: 70px;
@@ -102,4 +106,22 @@ header {
 .proceed{
   display: flex;
   flex-direction: column;
+  position: relative;
+  top: 75px;
+}
+.button{
+  width: 200px;
+  justify-content: center;
+  margin-left: 500px;
+  border-radius: 100px;
+  padding-left: 50px;
+  background-color: rgba(0, 0, 0, 0);
+  border: solid #ca6e9c;
+  border-width: 4px;
+}
+
+.landingtext{
+  margin-bottom: 115px;
+  position: relative;
+  bottom: 45px;
 }
