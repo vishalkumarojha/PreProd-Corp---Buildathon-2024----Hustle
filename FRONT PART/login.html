@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Login Form</title>
+</head>
+<body>
+    <img src="pop up page.png">
+    <div class="popup">
+        <div class="popup-inner">
+            <button class="close-button" onclick="closePopup()">×</button>
+            <img src="media/logo.png" alt="Logo" class="logo">
+            <form class="form" onsubmit="return handleSubmit(event)">
+                <div class="form-group">
+                    <label for="email" class="label"></label>
+                    <input type="email" id="email" class="input" placeholder="Email or Username:" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="label"></label>
+                    <input type="password" id="password" class="input" placeholder="Password:" required>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" class="checkbox"> Remember Me
+                    </label>
+                </div>
+                <div class="form-group">
+                    <p class="forgotpass">Forgot password? <a href="#" class="forgot-password-link">Forgot Password?</a></p>
+                </div>
+                <button type="submit" class="submit-button">Login</button>
+                <p class="signup-text">Don't have an account? <a href="registration.html" href="#" class="signup-link">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

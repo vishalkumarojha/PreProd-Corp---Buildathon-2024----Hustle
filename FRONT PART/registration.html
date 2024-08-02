@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registration.css">
+    <title>Register</title>
+</head>
+<body>
+    <img src="pop up page.png">
+    <div class="modal" id="registrationModal">
+        <div class="modalContent">
+            <h2 class="uppertext">Registration Form</h2>
+            <form id="registrationForm">
+                <label class="here">
+                    <input type="text" name="name" placeholder="Name:" required>
+                </label>
+                <label class="here">
+                    <input type="date" name="DOB" placeholder="DOB:" required>
+                </label>
+                <label class="here">
+                    <input type="text" name="phoneno." placeholder="Phone No.:" required>
+                </label>
+                <button type="submit">Submit</button>
+            </form>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function closeModal() {
+            document.getElementById('registrationModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

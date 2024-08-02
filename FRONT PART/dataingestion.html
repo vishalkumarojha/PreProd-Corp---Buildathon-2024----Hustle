@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="dataingestion.css">
+</head>
+<body>
+  <div>
+    <nav class="navbar">
+      <ul>
+          <li><a href="dataingestion.html" class="dataingestion">Data Ingestion</a></li>
+          <li><a href="datatransformation.html">Data Transformation</a></li>
+          <li><a href="autotrain.html">Auto Train ML models</a></li>
+          <li><a href="freeze.html">Freeze the learnings</a></li>
+      </ul>
+    </nav>
+    <div class="text">Data Ingestion</div>
+    <div class="content">
+        <p class="heading">Choose an option to upload the data</p>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="options" value="option1">
+            Enter the path
+          </label>
+          <label>
+            <input type="radio" name="options" value="option2">
+            Upload the file
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="filePath">Path of the file</label>
+          <input type="text" id="filePath" placeholder="Enter file path">
+        </div>
+        <div class="form-group">
+          <label for="fileName">Name of the file</label>
+          <input type="text" id="fileName" placeholder="Enter file name">
+        </div>
+        <div class="or-separator">
+          <p class="heading">OR</p>
+        </div>
+        <div class="upload-container">
+          <input type="file" id="fileInput" class="file-input" multiple>
+          <div class="drop-zone" id="dropZone">
+              <p class="heading">Drag & Drop files here or click to browse</p>
+          </div>
+          <div>
+            <button type="button" id="uploadButton" class="upload-button">Ingest</button>
+          </div>
+          <p class="heading">Data dimensions</p>
+          <button type="button" id="runbutton" class="run-button">Run</button>
+          <p class="heading">Reset Database</p>
+          <button type="button" id="dropbutton" class="drop-button">Drop database</button>
+        </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
