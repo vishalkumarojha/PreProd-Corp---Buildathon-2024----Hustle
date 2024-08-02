@@ -1,1 +1,248 @@
-kbjk
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Train</title>
+    <link rel="stylesheet" href="autotrain.css">
+</head>
+<body>
+  <div>
+    <nav class="navbar" id="navbar">
+      <ul>
+          <li><a href="dataingestion.html" class="dataingestion">Data Ingestion</a></li>
+          <li><a href="datatransformation.html">Data Transformation</a></li>
+          <li><a href="autotrain.html">Auto Train ML models</a></li>
+          <li><a href="freeze.html">Freeze the learnings</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="container1">
+        <p class="container-title">Train Test Split Data</p>
+        <div class="split-wrapper">
+          <div class="split-container">
+            <p>Training data split</p>
+            <button type="button" class="split-button" id="trainButton">
+              <span class="minus">-</span>
+              <div class="split-value" id="trainSplit">50</div>
+              <span class="plus">+</span>
+            </button>
+          </div>
+          <div class="split-container">
+            <p>Testing data split</p>
+            <button type="button" class="split-button" id="testButton">
+              <span class="minus">-</span>
+              <div class="split-value" id="testSplit">50</div>
+              <span class="plus">+</span>
+            </button>
+          </div>
+        </div>
+        <div class="button">
+          <button type="button" id="uploadButton" class="upload-button">Split Data</button>
+        </div>
+      </div>
+
+      <div class="container2">
+        <p class="container-title">Linear Regression</p>
+        <div class="dropdown-container">
+          <button class="dropdown-button">See more about hyperparameters</button>
+          <div class="dropdown-content">
+              <a href="#">Option 1</a>
+              <a href="#">Option 2</a>
+              <a href="#">Option 3</a>
+              <a href="#">Option 4</a>
+          </div>
+        </div>
+        <div class="split-wrapper">
+          <div class="split-container">
+            <p>Fit intercept</p>
+            <button type="button" class="split-button" id="fitInterceptButton">
+              <span class="minus">-</span>
+              <div class="split-value" id="fitInterceptSplit">50</div>
+              <span class="plus">+</span>
+            </button>
+          </div>
+          <div class="split-container">
+            <p>N Jobs</p>
+            <button type="button" class="split-button" id="nJobsButton">
+              <span class="minus">-</span>
+              <div class="split-value" id="nJobsSplit">50</div>
+              <span class="plus">+</span>
+            </button>
+          </div>
+        </div>
+        <div class="button">
+          <button type="button" id="runButton" class="upload-button">Run</button>
+        </div>
+      </div>
+      <div class="container3">
+        <div class="container-title">Decision Tree</div>
+        <div class="dropdown-container">
+          <button class="dropdown-button">See more about hyperparameters</button>
+          <div class="dropdown-content">
+              <a href="#">Option 1</a>
+              <a href="#">Option 2</a>
+              <a href="#">Option 3</a>
+              <a href="#">Option 4</a>
+          </div>
+        </div>
+        <div class="hyperparameters">
+          <div class="split-container">
+            <p>Max Depth</p>
+            <button type="button" class="split-button" id="maxDepthButton">
+              <span class="minus">-</span>
+              <div class="split-value" id="maxDepthSplit">10</div>
+              <span class="plus">+</span>
+            </button>
+          </div>
+          <div class="split-container">
+            <p>Min Samples Split</p>
+            <button type="button" class="split-button" id="minSamplesSplitButton">
+              <span class="minus">-</span>
+              <div class="split-value" id="minSamplesSplit">2</div>
+              <span class="plus">+</span>
+            </button>
+          </div>
+          <div class="split-container">
+            <p>Criterion</p>
+            <div class="dropdown-container">
+              <button class="dropdown-button" id="criterionButton">gini</button>
+              <div class="dropdown-content" id="criterionDropdown">
+                <a href="#" data-value="gini">Gini</a>
+                <a href="#" data-value="entropy">Entropy</a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="button">
+          <button type="button" id="runButton" class="run-button">Run</button>
+        </div>
+      </div>
+      <div class="container4">
+        <p class="container-title">AdaBoost</p>
+        <div class="dropdown-container">
+          <button class="dropdown-button">See more about hyperparameters</button>
+          <div class="dropdown-content">
+              <a href="#">Option 1</a>
+              <a href="#">Option 2</a>
+              <a href="#">Option 3</a>
+              <a href="#">Option 4</a>
+          </div>
+        </div>
+        <div class="split-wrapper">
+          <div class="split-container">
+            <p>N Estimators</p>
+            <button type="button" class="split-button" id="fitInterceptButton">
+              <span class="minus">-</span>
+              <div class="split-value" id="fitInterceptSplit">50</div>
+              <span class="plus">+</span>
+            </button>
+          </div>
+          <div class="split-container">
+            <p>Learning Rate</p>
+            <button type="button" class="split-button" id="nJobsButton">
+              <span class="minus">-</span>
+              <div class="split-value" id="nJobsSplit">1.00</div>
+              <span class="plus">+</span>
+            </button>
+          </div>
+        </div>
+        <div class="button">
+          <button type="button" id="runButton" class="upload-button">Run</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <script>
+    function updateSplit(id, increment) {
+      const element = document.getElementById(id);
+      let value = parseInt(element.textContent, 10);
+      value += increment;
+      if (value >= 0 && value <= 100) {
+        element.textContent = value;
+      }
+    }
+
+    document.getElementById('trainButton').addEventListener('click', function(event) {
+      if (event.target.classList.contains('plus')) {
+        updateSplit('trainSplit', 1);
+      } else if (event.target.classList.contains('minus')) {
+        updateSplit('trainSplit', -1);
+      }
+    });
+
+    document.getElementById('testButton').addEventListener('click', function(event) {
+      if (event.target.classList.contains('plus')) {
+        updateSplit('testSplit', 1);
+      } else if (event.target.classList.contains('minus')) {
+        updateSplit('testSplit', -1);
+      }
+    });
+
+    document.getElementById('fitInterceptButton').addEventListener('click', function(event) {
+      if (event.target.classList.contains('plus')) {
+        updateSplit('fitInterceptSplit', 1);
+      } else if (event.target.classList.contains('minus')) {
+        updateSplit('fitInterceptSplit', -1);
+      }
+    });
+
+    document.getElementById('nJobsButton').addEventListener('click', function(event) {
+      if (event.target.classList.contains('plus')) {
+        updateSplit('nJobsSplit', 1);
+      } else if (event.target.classList.contains('minus')) {
+        updateSplit('nJobsSplit', -1);
+      }
+    });
+
+  document.querySelectorAll('.dropdown-button').forEach(button => {
+    button.addEventListener('click', toggleDropdown);
+  });
+
+  document.addEventListener('click', function(event) {
+    if (!event.target.classList.contains('dropdown-button')) {
+      document.querySelectorAll('.dropdown-content').forEach(content => {
+        content.style.display = 'none';
+      });
+    }
+  });
+  function toggleDropdown(event) {
+    event.stopPropagation();
+    const dropdownContent = event.currentTarget.nextElementSibling;
+    if (dropdownContent.style.display === 'block') {
+      dropdownContent.style.display = 'none';
+    } else {
+      document.querySelectorAll('.dropdown-content').forEach(content => {
+        content.style.display = 'none'; // Close all other dropdowns
+      });
+      dropdownContent.style.display = 'block';
+    }
+  }
+
+  function selectOption(event) {
+    event.preventDefault();
+    const selectedValue = event.currentTarget.getAttribute('data-value');
+    const button = event.currentTarget.closest('.dropdown-container').querySelector('.dropdown-button');
+    button.textContent = selectedValue;
+    document.getElementById('criterionSplit').textContent = selectedValue;
+    event.currentTarget.parentElement.style.display = 'none';
+  }
+
+  document.querySelectorAll('.dropdown-button').forEach(button => {
+    button.addEventListener('click', toggleDropdown);
+  });
+
+  document.querySelectorAll('.dropdown-content a').forEach(option => {
+    option.addEventListener('click', selectOption);
+  });
+
+</script>
+
+</script>
+
+  </script>
+</body>
+</html>

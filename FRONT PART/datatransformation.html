@@ -32,6 +32,7 @@
             <option value="option4">Option 4</option>
         </select>
       </div>
+      <button type="button" id="uploadButton1" class="upload-button">Remove Features</button>
     </div>
     <div>
       <p>Convert to numbers</p>
@@ -44,6 +45,7 @@
             <option value="option4">Option 4</option>
         </select>
       </div>
+      <button type="button" id="uploadButton2" class="upload-button">Convert features</button>
     </div>
     <div>
       <p>Target variable</p>
@@ -56,7 +58,21 @@
             <option value="option4">Option 4</option>
         </select>
       </div>
+      <button type="button" id="uploadButton3" class="upload-button">Set target variables</button>
+    </div>
+    <div>
+      <p>Data dimensions</p>
+      <button type="button" id="runButton" class="run-button">Run</button>
+    </div>
+    <div>
+      <button type="button" id="topButton" class="top-button">Back to the top</button>
     </div>
   </div>
+
+  <script>
+    document.getElementById('topButton').addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>

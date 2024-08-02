@@ -114,9 +114,11 @@ input[type="radio"] {
   border-color: #666;
   background-color: #fafafa;
 }
-.heading{
+
+.heading {
   color: black;
 }
+
 .upload-button,
 .run-button,
 .drop-button {
@@ -127,11 +129,20 @@ input[type="radio"] {
   border: none;
   color: white;
 }
-.content,
-.text{
-  margin-top: 80px;
+
+.upar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  gap: 10px; 
 }
+
 .text {
-  text-align: left;
-  margin-left: 260px;
+  font-size: 24px; 
+  font-weight: bold; 
+}
+.heading{
+margin-top: 30px;
 }

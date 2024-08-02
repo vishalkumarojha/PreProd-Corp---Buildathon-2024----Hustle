@@ -8,7 +8,7 @@
 </head>
 <body>
   <div>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
       <ul>
           <li><a href="dataingestion.html" class="dataingestion">Data Ingestion</a></li>
           <li><a href="datatransformation.html">Data Transformation</a></li>
@@ -16,9 +16,11 @@
           <li><a href="freeze.html">Freeze the learnings</a></li>
       </ul>
     </nav>
-    <div class="text">Data Ingestion</div>
+    <div class="upar"> 
+      <div class="text">Data Ingestion</div>
+      <div class="heading">Choose an option to upload the data</div>
+    </div>
     <div class="content">
-        <p class="heading">Choose an option to upload the data</p>
         <div class="radio-group">
           <label>
             <input type="radio" name="options" value="option1">
@@ -51,10 +53,15 @@
           <p class="heading">Data dimensions</p>
           <button type="button" id="runbutton" class="run-button">Run</button>
           <p class="heading">Reset Database</p>
-          <button type="button" id="dropbutton" class="drop-button">Drop database</button>
+          <button type="button" id="dropbutton" class="drop-button">Drop Database</button>
         </div>
     </div>
   </div>
   <script src="script.js"></script>
+  <script>
+    document.getElementById('topbutton').addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
